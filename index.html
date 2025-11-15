@@ -39,6 +39,11 @@ header{display:flex;justify-content:space-between;align-items:center;padding:12p
     <a href="tel:01064580626" class="phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.7 21 3 13.3 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57.12.36.03.78-.24 1.01l-2.21 2.21z"/></svg></a>
   </div>
 </header>
+<div class="container">
+  <div style="max-width:1200px;margin:20px auto;padding:0 16px;">
+  <input id="searchInput" type="text" placeholder="ابحث عن المنتج..." 
+         style="width:100%;padding:12px;font-size:18px;border:2px solid #ccc;border-radius:8px;margin-bottom:20px;">
+</div>
 
 <div class="container">
   <div class="grid">
@@ -219,6 +224,19 @@ header{display:flex;justify-content:space-between;align-items:center;padding:12p
 
   </div>
 </div>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const products = document.querySelectorAll(".card");
+
+  searchInput.addEventListener("input", function () {
+    const text = searchInput.value.toLowerCase();
+
+    products.forEach(card => {
+      const name = card.querySelector("h3").textContent.toLowerCase();
+      card.style.display = name.includes(text) ? "block" : "none";
+    });
+  });
+</script>
 
 </body>
 </html>

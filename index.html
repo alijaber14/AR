@@ -8,113 +8,190 @@
   <title>حصر كهرباء المنازل</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    body {
-      background: #f5f5f5;
-      padding: 20px;
-    }
+body{
+  background:#eef2f7;
+  padding:20px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+.container{
+  max-width:1200px;
+  margin:auto;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #222;
-    }
+.header{
+  background:linear-gradient(135deg,#1e293b,#0f172a);
+  color:white;
+  padding:25px;
+  border-radius:20px;
+  margin-bottom:20px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
 
-    h2 {
-      margin: 20px 0 10px;
-      color: #444;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
+.header h1{
+  font-size:32px;
+  margin-bottom:8px;
+}
 
-    .top-inputs {
-      margin-bottom: 20px;
-    }
+.header p{
+  color:#cbd5e1;
+}
 
-    .top-inputs input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-      outline: none;
-    }
+.top-inputs{
+  background:white;
+  padding:20px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
 
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #fafafa;
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ddd;
-    }
+.top-inputs input{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border:1px solid #d1d5db;
+  border-radius:12px;
+  font-size:16px;
+}
 
-    .item-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.section{
+  background:white;
+  padding:20px;
+  border-radius:18px;
+  margin-bottom:25px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
 
-    .item input[type="number"] {
-      width: 90px;
-      padding: 8px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
+.section-title{
+  font-size:24px;
+  margin-bottom:20px;
+  color:#111827;
+  border-right:5px solid #25D366;
+  padding-right:12px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
+.items-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:15px;
+}
 
-    .send-btn {
-      flex: 1;
-      padding: 15px;
-      border: none;
-      background: #25D366;
-      color: white;
-      font-size: 17px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.item{
+  background:#f8fafc;
+  border:2px solid transparent;
+  border-radius:16px;
+  padding:15px;
+  transition:0.3s;
+}
 
-    .send-btn:hover {
-      background: #1ebe5d;
-    }
+.item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-    .site-name {
-      text-align: center;
-      margin-top: 15px;
-      color: #777;
-      font-size: 14px;
-    }
+.item.active{
+  border-color:#25D366;
+  background:#ecfdf5;
+}
 
-    @media(max-width:600px) {
-      .buttons {
-        flex-direction: column;
-      }
-    }
+.item-top{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.item-top span{
+  font-size:16px;
+  font-weight:bold;
+  color:#111827;
+}
+
+.qty{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+.search-box{
+  margin-bottom:20px;
+}
+
+.search-box input{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:14px;
+  font-size:16px;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.counter{
+  margin-top:10px;
+  color:#555;
+  font-size:15px;
+}
+
+.buttons{
+  display:flex;
+  gap:15px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+.send-btn{
+  flex:1;
+  padding:16px;
+  border:none;
+  border-radius:14px;
+  background:#25D366;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+  font-weight:bold;
+}
+
+.send-btn:hover{
+  background:#1da851;
+}
+
+.site-name{
+  text-align:center;
+  margin-top:20px;
+  color:#777;
+  font-size:15px;
+}
+
+@media(max-width:700px){
+
+  .items-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+.item{
+  background:#f8fafc;
+  border:2px solid transparent;
+  border-radius:16px;
+  padding:15px;
+  transition:0.3s;
+}
+
+.item.active{
+  background:#dbeafe;
+  border-color:#2563eb;
+  transform:scale(1.02);
+} 
   </style>
 </head>
 
@@ -144,6 +221,262 @@
       <input type="text" id="clientName" placeholder="اسم العميل">
 
       <input type="text" id="siteName" placeholder="اسم الموقع / المشروع">
+
+    </div>
+
+<!-- قسم التأسيس -->
+<div class="section">
+
+  <h2 class="section-title">⚡ التأسيس</h2>
+
+  <div class="items-grid" id="foundationItems"></div>
+
+</div>
+
+<!-- قسم التشطيب -->
+<div class="section">
+
+  <h2 class="section-title">💡 التشطيب</h2>
+
+  <div class="items-grid" id="finishItems"></div>
+
+</div>
+  <input type="number" class="qty" placeholder="العدد">
+</div>
+    <!-- أزرار الإرسال -->
+    <div class="buttons">
+
+      <button class="send-btn" onclick="sendWhatsApp('201064580626')">
+        إرسال الحصر لـ En.g Aly
+      </button>
+
+      <button class="send-btn" onclick="sendWhatsApp('201110696728')">
+        إرسال الحصر لـ Eng. Ahmed
+      </button>
+
+    </div>
+
+    <div class="site-name">
+      Aly Store
+    </div>
+
+  </div>
+
+  <script>
+const foundationProducts = [
+
+  "سلك 1.5 مم",
+  "سلك 2 مم",
+  "سلك 3 مم",
+  "سلك 4 مم",
+  "سلك 6 مم",
+  "سلك 10 مم",
+  "سلك 16 مم",
+  "سلك 25 مم",
+
+  "خرطوم أرضي 16",
+  "خرطوم أرضي 23",
+
+  "فلسكبل 16",
+  "فلسكبل 11",
+
+  "خرطوم واير 16",
+  "خرطوم واير 23",
+
+  "علبة مصطفى محمود",
+
+  "لوحة 18 خط",
+  "لوحة 24 خط",
+  "لوحة 30 خط",
+  "لوحة 36 خط",
+
+  "لوحة 3 فاز",
+  "لوحة اتصالات",
+  "لوحة 60 × 40",
+
+  "سلك رباط مجلفن",
+  "مسمار صلب 3 سم",
+  "شرايط لحام"
+
+];
+
+const finishProducts = [
+
+  "مفتاح عادي",
+  "مفتاح ديفياتير",
+  "مفتاح وسط",
+  "زر جرس",
+  "جرس زنان",
+
+  "مفتاح ستارة",
+  "مفتاح تكييف",
+
+  "بريزة",
+  "بريزة شوكو",
+  "بريزة USB",
+  "بريزة داتا Cat6",
+  "بريزة تليفون",
+  "بريزة دش",
+  "بريزة HDMI",
+
+  "ديمر",
+  "حساس حركة",
+  "كشاف طوارئ",
+
+  "سدادة",
+  "شاسيه",
+  "وش",
+
+  "ليد بروفيل 240",
+  "ليد بروفيل 120",
+  "عود بروفيل 1.7",
+
+  "مفتاح أحادي 16 أمبير",
+  "مفتاح أحادي 20 أمبير",
+  "مفتاح أحادي 25 أمبير",
+  "مفتاح أحادي 32 أمبير",
+  "مفتاح أحادي 40 أمبير",
+  "مفتاح أحادي 63 أمبير",
+
+  "مفتاح ثلاثي 40 أمبير",
+  "مفتاح ثلاثي 63 أمبير",
+
+  "مفتاح 100 أمبير",
+  "مفتاح 100 أمبير مولدن",
+
+  "قاعدة مفتاح",
+  "طقم وصلات",
+  "أحزمة",
+  "ترامل",
+  "أرقام",
+
+  "كشافات مغناطك",
+
+  "ترانس مغناطك",
+  "ترانس 60 وات",
+  "ترانس 100 وات",
+  "ترانس 150 وات",
+  "ترانس 200 وات",
+  "ترانس 300 وات",
+  "ترانس 400 وات"
+
+];
+
+function createItems(products, containerId){
+
+  const container = document.getElementById(containerId);
+
+  products.forEach(product => {
+
+    container.innerHTML += `
+
+      <div class="item">
+
+        <div class="item-top">
+
+          <input type="checkbox" class="check">
+
+          <span>${product}</span>
+
+        </div>
+
+        <input type="number" class="qty" placeholder="العدد">
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+createItems(foundationProducts, "foundationItems");
+createItems(finishProducts, "finishItems");
+    function sendWhatsApp(phone) {
+
+      const items = document.querySelectorAll('.item');
+
+      const clientName = document.getElementById('clientName').value;
+      const siteName = document.getElementById('siteName').value;
+
+      let message = "📋 موقع حصر Aly Store \n\n";
+
+      message += "👤 اسم العميل: " + clientName + "\n";
+      message += "🏠 اسم الموقع: " + siteName + "\n\n";
+
+      items.forEach(item => {
+
+        const check = item.querySelector('.check');
+        const name = item.querySelector('span').innerText;
+        const qty = item.querySelector('.qty').value;
+
+        if (check.checked) {
+
+          message += "✅ " + name + " - العدد: " + qty + "\n";
+
+        }
+
+      });
+
+      message += "\n📌 مرسل من موقع Aly Store";
+
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, '_blank');
+
+    }
+function searchItems() {
+
+  const input = document.getElementById("searchInput").value.toLowerCase();
+
+  const items = document.querySelectorAll(".item");
+
+  items.forEach(item => {
+
+    const text = item.querySelector("span").innerText.toLowerCase();
+
+    if (text.includes(input)) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+
+  });
+
+}
+function toggleActive(item){
+
+  const check = item.querySelector('.check');
+
+  check.checked = !check.checked;
+
+  item.classList.toggle('active');
+
+}
+document.addEventListener("change", function(e){
+
+  if(e.target.classList.contains("check")){
+
+    const item = e.target.closest(".item");
+
+    if(e.target.checked){
+
+      item.classList.add("active");
+
+    }else{
+
+      item.classList.remove("active");
+
+    }
+
+  }
+
+});
+  </script>
+
+</body>
+
+</html>      <input type="text" id="siteName" placeholder="اسم الموقع / المشروع">
 
     </div>
 
